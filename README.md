@@ -8,13 +8,11 @@ Please &#9733; this repo if you found it useful &#9733; &#9733; &#9733;
 
 
 ## Features
-<!------------------------------------------------------->
 
 * Register and unregister server with CloudFlare
 
 
 ## Installation
-<!------------------------------------------------------->
 
 ```sh
 git clone https://github.com/jamrizzi/dns-register
@@ -26,7 +24,6 @@ sudo mv ./dns-register /bin/dns-register
 
 
 ## Dependencies
-<!------------------------------------------------------->
 
 * [GoLang](https://golang.org/)
 * [Make](https://www.gnu.org/software/make/)
@@ -34,7 +31,6 @@ sudo mv ./dns-register /bin/dns-register
 
 
 ## Usage
-<!------------------------------------------------------->
 
 ### Command Line Tool
 
@@ -85,13 +81,11 @@ export SUBDOMAIN=servers
 
 
 ## Support
-<!------------------------------------------------------->
 
 Submit an [issue](https://github.com/jamrizzi/dns-register/issues/new)
 
 
 ## Buy Me Coffee
-<!------------------------------------------------------->
 
 A ridiculous amount of coffee was consumed in the process of building this project.
 
@@ -99,7 +93,6 @@ A ridiculous amount of coffee was consumed in the process of building this proje
 
 
 ## Contributing
-<!------------------------------------------------------->
 
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
@@ -109,7 +102,6 @@ A ridiculous amount of coffee was consumed in the process of building this proje
 
 
 ## License
-<!------------------------------------------------------->
 
 [MIT License](https://github.com/jamrizzi/dns-register/blob/master/LICENSE)
 
@@ -117,13 +109,11 @@ A ridiculous amount of coffee was consumed in the process of building this proje
 
 
 ## Credits
-<!------------------------------------------------------->
 
 * [Jam Risser](https://jamrizzi.com) - Author
 
 
 ## Changelog
-<!------------------------------------------------------->
 
 0.0.1 (2017-06-03)
 * Initial release

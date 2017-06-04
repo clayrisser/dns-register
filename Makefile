@@ -7,6 +7,7 @@ DOCKERFILE := $(CWD)/Dockerfile
 .PHONY: all
 all: clean dependancies build
 
+.PHONY: register
 register:
 	@go build register.go
 	@echo built register
@@ -19,10 +20,6 @@ start: get realize
 get:
 	@go get
 	@echo got dependancies
-
-.PHONY: test
-test: register
-	@./register
 
 .PHONY: build
 build:

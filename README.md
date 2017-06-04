@@ -1,6 +1,6 @@
 # dns-register
 
-Automatically register and unregister your server with CloudFlare DNS
+Register and unregister server with DNS providers
 
 Please &#9733; this repo if you found it useful &#9733; &#9733; &#9733;
 
@@ -8,8 +8,7 @@ Please &#9733; this repo if you found it useful &#9733; &#9733; &#9733;
 ## Features
 <!------------------------------------------------------->
 
-* Automatically register server with CloudFlare
-* Automatically unregister server with CloudFlare
+* Register and unregister server with CloudFlare
 
 
 ## Installation

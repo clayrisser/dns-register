@@ -60,7 +60,7 @@ export SUBDOMAIN=servers
   
 ### Docker
 
-  * Register
+* Register
   
   ```sh
   docker run --rm \
@@ -71,16 +71,16 @@ export SUBDOMAIN=servers
     jamrizzi/dns-register:latest register
   ```
 
-  * Unregister
+* Unregister
   
-    ```sh
-    docker run --rm \
-      -e CLOUDFLARE_API_KEY=your-cloudflare-api-key \
-      -e CLOUDFLARE_EMAIL=your-cloudflare-email \
-      -e CLOUDFLARE_WEBSITE=your-cloudflare-website \
-      -e SUBDOMAIN=servers -e \
-      jamrizzi/dns-register:latest unregister
-    ```
+  ```sh
+  docker run --rm \
+    -e CLOUDFLARE_API_KEY=your-cloudflare-api-key \
+    -e CLOUDFLARE_EMAIL=your-cloudflare-email \
+    -e CLOUDFLARE_WEBSITE=your-cloudflare-website \
+    -e SUBDOMAIN=servers -e \
+    jamrizzi/dns-register:latest unregister
+  ```
 
 
 ## Support

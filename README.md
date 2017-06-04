@@ -1,6 +1,6 @@
 # dns-register
 
-[![](https://img.shields.io/docker/stars/jamrizzi/dns-register.svg?style=flat-square)](https://hub.docker.com/r/jamrizzi/dns-register/)
+[![](https://img.shields.io/docker/stars/jamrizzi/dns-register.svg?style=flat-square)](https://hub.docker.com/r/jamrizzi/dns-register/) [![](https://img.shields.io/docker/pulls/jamrizzi/dns-register.svg?style=flat-square)](https://hub.docker.com/r/jamrizzi/dns-register/) [![](https://img.shields.io/docker/build/jamrizzi/dns-register.svg?style=flat-square)](https://hub.docker.com/r/jamrizzi/dns-register/)
 
 Register and unregister server with DNS providers
 

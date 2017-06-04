@@ -1,5 +1,7 @@
 # dns-register
 
+[![](https://img.shields.io/docker/stars/jamrizzi/dns-register.svg?style=flat-square)](https://hub.docker.com/r/jamrizzi/dns-register/)
+
 Register and unregister server with DNS providers
 
 Please &#9733; this repo if you found it useful &#9733; &#9733; &#9733;

@@ -7,10 +7,9 @@ DOCKERFILE := $(CWD)/Dockerfile
 .PHONY: all
 all: clean dependancies build
 
-.PHONY: register
-register:
-	@go build register.go
-	@echo built register
+dns-register: get
+	@go build dns-register.go
+	@echo built dns-register
 
 .PHONY: start
 start: get realize
@@ -51,7 +50,7 @@ essh:
 
 .PHONY: clean
 clean:
-	-@rm -rf ./.realize ./register
+	-@rm -rf ./.realize ./dns-register
 	@echo cleaned
 
 .PHONY: dependancies

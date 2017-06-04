@@ -16,9 +16,11 @@ Please &#9733; this repo if you found it useful &#9733; &#9733; &#9733;
 <!------------------------------------------------------->
 
 ```sh
-cd $GOPATH
 git clone https://github.com/jamrizzi/dns-register
-make register
+cd dns-register
+export GOPATH=$(pwd)
+make dns-register
+sudo mv ./dns-register /bin/dns-register
 ```
 
 
@@ -33,7 +35,52 @@ make register
 ## Usage
 <!------------------------------------------------------->
 
-Scroll up and down until you're hypnotized
+### Command Line Tool
+
+Set Environment Variables
+
+```sh
+export CLOUDFLARE_API_KEY=your-cloudflare-api-key
+export CLOUDFLARE_EMAIL=your-cloudflare-email
+export CLOUDFLARE_WEBSITE=your-cloudflare-website
+export SUBDOMAIN=servers
+```
+
+* Register
+  
+  ```sh
+  dns-register register
+  ```
+  
+* Unregister
+  
+  ```sh
+  dns-register unregister
+  ```
+  
+### Docker
+
+  * Register
+  
+  ```sh
+  docker run --rm \
+    -e CLOUDFLARE_API_KEY=your-cloudflare-api-key \
+    -e CLOUDFLARE_EMAIL=your-cloudflare-email \
+    -e CLOUDFLARE_WEBSITE=your-cloudflare-website \
+    -e SUBDOMAIN=servers -e \
+    jamrizzi/dns-register:latest register
+  ```
+
+  * Unregister
+  
+    ```sh
+  docker run --rm \
+    -e CLOUDFLARE_API_KEY=your-cloudflare-api-key \
+    -e CLOUDFLARE_EMAIL=your-cloudflare-email \
+    -e CLOUDFLARE_WEBSITE=your-cloudflare-website \
+    -e SUBDOMAIN=servers -e \
+    jamrizzi/dns-register:latest unregister
+  ```
 
 
 ## Support

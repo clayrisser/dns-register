@@ -9,6 +9,11 @@ MAINTAINER Jam Risser (jamrizzi)
 
 WORKDIR /app/
 
+ENV CLOUDFLARE_API_KEY=""
+ENV CLOUDFLARE_EMAIL=""
+ENV CLOUDFLARE_WEBSITE=""
+ENV SUBDOMAIN=servers
+
 RUN apk add --no-cache tini && \
     apk add --no-cache --virtual build-deps \
     gcc \
@@ -22,9 +27,9 @@ RUN export GOPATH=/app/.tmp/ && \
     export GOBIN=/app/.tmp/bin/ && \
     cd /app/.tmp/ && \
     go get && \
-    go build /app/.tmp/register.go && \
-    mv /app/.tmp/register /app/register && \
+    go build /app/.tmp/dns-register.go && \
+    mv /app/.tmp/dns-register /app/dns-register && \
     rm -rf /app/.tmp/ && \
     apk del build-deps
 
-ENTRYPOINT ["/sbin/tini", "--", "/app/register"]
+ENTRYPOINT ["/sbin/tini", "--", "/app/dns-register"]

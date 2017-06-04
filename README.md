@@ -8,8 +8,8 @@ Please &#9733; this repo if you found it useful &#9733; &#9733; &#9733;
 ## Features
 <!------------------------------------------------------->
 
-* Automatically register server's public IP as an A record
-* Automatically unregister server's public IP as an A record
+* Automatically register server with CloudFlare
+* Automatically unregister server with CloudFlare
 
 
 ## Installation

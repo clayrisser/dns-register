@@ -14,13 +14,15 @@ ENV CLOUDFLARE_EMAIL=""
 ENV CLOUDFLARE_WEBSITE=""
 ENV SUBDOMAIN=servers
 
-RUN apk add --no-cache tini && \
+RUN apk add --no-cache \
+        ca-certificates \
+        tini && \
     apk add --no-cache --virtual build-deps \
-    gcc \
-    go \
-    musl-dev \
-    openssl \
-    git
+        gcc \
+        git \
+        go \
+        musl-dev \
+        openssl
 
 COPY ./ /app/.tmp/
 RUN export GOPATH=/app/.tmp/ && \

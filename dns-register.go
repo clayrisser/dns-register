@@ -27,22 +27,22 @@ func getSettings() Settings {
 	}
 	settings.CloudFlare.ApiKey = os.Getenv("CLOUDFLARE_API_KEY")
 	if len(settings.CloudFlare.ApiKey) <= 0 {
-		fmt.Println("Missing 'CLOUDFLARE_API_KEY'")
+		fmt.Println("missing env 'CLOUDFLARE_API_KEY'")
 		ready = false
 	}
 	settings.CloudFlare.Email = os.Getenv("CLOUDFLARE_EMAIL")
 	if len(settings.CloudFlare.Email) <= 0 {
-		fmt.Println("Missing 'CLOUDFLARE_EMAIL'")
+		fmt.Println("missing env 'CLOUDFLARE_EMAIL'")
 		ready = false
 	}
 	settings.CloudFlare.Website = os.Getenv("CLOUDFLARE_WEBSITE")
 	if len(settings.CloudFlare.Website) <= 0 {
-		fmt.Println("Missing 'CLOUDFLARE_WEBSITE'")
+		fmt.Println("missing env 'CLOUDFLARE_WEBSITE'")
 		ready = false
 	}
 	settings.Subdomain = os.Getenv("SUBDOMAIN")
 	if len(settings.Subdomain) <= 0 {
-		fmt.Println("Missing 'SUBDOMAIN'")
+		fmt.Println("missing env 'SUBDOMAIN'")
 		ready = false
 	}
 	if !ready {
@@ -73,7 +73,7 @@ func registerCloudFlare(api *cloudflare.API, zoneId string, publicIP string, set
 	if err != nil {
 		return "", err
 	}
-	return "Registered 'A " + settings.Subdomain + "." + settings.CloudFlare.Website + " " + publicIP + "'", nil
+	return "registered 'A " + settings.Subdomain + "." + settings.CloudFlare.Website + " " + publicIP + "'", nil
 }
 
 func unregisterCloudFlare(api *cloudflare.API, zoneId string, publicIP string, settings Settings) (string, error) {
@@ -91,7 +91,7 @@ func unregisterCloudFlare(api *cloudflare.API, zoneId string, publicIP string, s
 			break
 		}
 	}
-	return "Unregistered 'A " + settings.Subdomain + "." + settings.CloudFlare.Website + " " + publicIP + "'", nil
+	return "unregistered 'A " + settings.Subdomain + "." + settings.CloudFlare.Website + " " + publicIP + "'", nil
 }
 
 func main() {
@@ -99,6 +99,7 @@ func main() {
 	command := os.Args[len(os.Args)-1]
 	response := ""
 	publicIP, err := getPublicIP()
+	fmt.Printf("public ip: %s\n", publicIP)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -122,7 +123,7 @@ func main() {
 		}
 	}
 	if response == "" {
-		fmt.Println("Command not found")
+		fmt.Println("command not found")
 		os.Exit(1)
 	}
 	fmt.Println(response)

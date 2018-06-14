@@ -1,24 +1,27 @@
 SHELL := /bin/bash
+ARGS := ""
 CWD := $(shell pwd)
-IMAGE := "jamrizzi/dns-register:latest"
+IMAGE := "codejamninja/dns-register:latest"
 SOME_CONTAINER := $(shell echo some-$(IMAGE) | sed 's/[^a-zA-Z0-9]//g')
 DOCKERFILE := $(CWD)/Dockerfile
 
 .PHONY: all
-all: clean dependancies build
+all: clean build
 
-dns-register: get
+.PHONY: install
+start: install
 	@go build dns-register.go
-	@echo built dns-register
+	@$$GOBIN/dns-register $(ARGS)
 
-.PHONY: start
-start: get realize
-	@realize run
+.PHONY: watch
+watch: install
+	@realize start
 
+.PHONY: install
+install: get
 .PHONY: get
 get:
 	@go get
-	@echo got dependancies
 
 .PHONY: build
 build:
@@ -52,19 +55,3 @@ essh:
 clean:
 	-@rm -rf ./.realize ./dns-register
 	@echo cleaned
-
-.PHONY: dependancies
-dependancies: docker realize
-	@echo fetched dependancies
-.PHONY: docker
-docker:
-ifeq ($(shell whereis docker), $(shell echo docker:))
-	@curl -L https://get.docker.com/ | bash
-endif
-	@echo fetched docker
-.PHONY: realize
-realize:
-ifeq ($(shell whereis realize), $(shell echo realize:))
-	@go get github.com/tockins/realize
-endif
-	@echo fetched realize
